@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
       home: NinjaCard(),
     ));
 
@@ -23,42 +23,48 @@ class NinjaCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                radius: 40.0,
-                backgroundImage: AssetImage('assets/thumb.jpg'),
-              ),
+            // ignore: prefer_const_constructors
+            Row(
+              children: <Widget>[
+                SizedBox(
+                  width: 10.0,
+                ),
+                CircleAvatar(
+                  radius: 40.0,
+                  backgroundImage: AssetImage('assets/thumb.jpg'),
+                ),
+                SizedBox(
+                  width: 30.0,
+                ),
+                Expanded(
+                  child: Text(
+                    'Antonio Stanislavov Gotev',
+                    style: TextStyle(
+                      color: Colors.amberAccent[200],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28.0,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                ),
+              ],
             ),
+            // ignore: prefer_const_constructors
             Divider(
-              color: Colors.grey[800],
+              color: Color.fromARGB(255, 255, 255, 255),
               height: 60.0,
             ),
-            Text(
-              'NAME',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Text(
-              'Chun-Li',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                fontWeight: FontWeight.bold,
-                fontSize: 28.0,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 30.0),
+            // ignore: prefer_const_constructors
+            const SizedBox(height: 10.0),
+            // ignore: prefer_const_constructors
             Text(
               'HOMETOWN',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Text(
               'Beijing, China',
               style: TextStyle(
@@ -69,14 +75,16 @@ class NinjaCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30.0),
+            // ignore: prefer_const_constructors
             Text(
               'CURRENT NINJA LEVEL',
+              // ignore: prefer_const_constructors
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Text(
               '8',
               style: TextStyle(
@@ -86,7 +94,7 @@ class NinjaCard extends StatelessWidget {
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             Row(
               children: <Widget>[
                 Icon(
