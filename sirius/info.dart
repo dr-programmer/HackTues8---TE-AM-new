@@ -14,9 +14,10 @@ class InfoCard extends StatelessWidget{
             centerTitle: true,
       ),
     body: Container(
-    padding: EdgeInsets.fromLTRB(10.0,20.0,30.0,40.0),
+    padding: EdgeInsets.fromLTRB(100.0,80.0,100.0,80.0),
     margin: EdgeInsets.all(30.0),
-    child: Text('Space is a place for life!'),
+    color: Colors.grey[200],
+    children: Text('Space is a place for life!'),
     ),
     );
 }
