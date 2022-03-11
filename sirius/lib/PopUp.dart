@@ -51,10 +51,20 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 81, 0, 187),
       ),
+      body: Stack(children: const [
+        Align(
+          alignment: Alignment.topCenter,
+          child: Text('This is space'),
+        ),
+      ]),
+      floatingActionButton: FloatingActionButton.small(
+        onPressed: (() {}),
+        backgroundColor: Color.fromARGB(255, 81, 0, 187),
+      ),
+      backgroundColor: Color.fromARGB(255, 0, 55, 100),
     );
   }
 }

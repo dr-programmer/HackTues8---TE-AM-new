@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'profile.dart';
 import 'homepage.dart';
 
@@ -51,6 +52,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 0, 75, 187),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -70,6 +72,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
+        unselectedItemColor: Colors.white,
         onTap: _onItemTapped,
       ),
     );

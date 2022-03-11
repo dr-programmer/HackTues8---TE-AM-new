@@ -20,18 +20,25 @@ class _myHomePageState extends State<myHomePage> {
       //color: Color.fromARGB(255, 0, 80, 146),
       child: Stack(
         children: <Widget>[
-          const Scaffold(
+          Scaffold(
+            appBar: AppBar(
+              title: const Text('Home Page'),
+              backgroundColor: Color.fromARGB(255, 0, 55, 100),
+            ),
             backgroundColor: Color.fromARGB(255, 0, 55, 100),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(100, 350, 0, 10),
             child: FloatingActionButton(
-                onPressed: () {}, child: const Icon(Icons.star)),
+                backgroundColor: Color.fromARGB(255, 81, 0, 187),
+                onPressed: () {},
+                child: const Icon(Icons.star)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(250, 230, 0, 10),
             //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
             child: FloatingActionButton(
+              backgroundColor: Color.fromARGB(255, 81, 0, 187),
               onPressed: () {},
               child: const Icon(Icons.star),
             ),
@@ -40,6 +47,7 @@ class _myHomePageState extends State<myHomePage> {
             padding: const EdgeInsets.fromLTRB(150, 100, 0, 500),
             //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
             child: FloatingActionButton(
+              backgroundColor: Color.fromARGB(255, 81, 0, 187),
               onPressed: () {},
               child: const Icon(Icons.star),
             ),
@@ -48,6 +56,7 @@ class _myHomePageState extends State<myHomePage> {
             padding: const EdgeInsets.fromLTRB(230, 500, 0, 0),
             //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
             child: FloatingActionButton(
+              backgroundColor: Color.fromARGB(255, 81, 0, 187),
               onPressed: () {},
               child: const Icon(Icons.star),
             ),
@@ -56,6 +65,7 @@ class _myHomePageState extends State<myHomePage> {
             padding: const EdgeInsets.fromLTRB(60, 600, 0, 0),
             //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
             child: FloatingActionButton(
+              backgroundColor: Color.fromARGB(255, 81, 0, 187),
               //backgroundColor: Colors.blue,
               onPressed: () {
                 Navigator.of(context).push(createRoute());
