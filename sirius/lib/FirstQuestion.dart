@@ -1,44 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'PopUp.dart';
 
-void main() => runApp(const Testing());
+void main() => runApp(const Pop());
 
-class Testing extends StatefulWidget {
-  const Testing({Key? key}) : super(key: key);
+class Pop extends StatefulWidget {
+  const Pop({Key? key}) : super(key: key);
 
   @override
-  State<Testing> createState() => _TestingState();
+  State<Pop> createState() => _PopState();
 }
 
-class _TestingState extends State<Testing> {
+class _PopState extends State<Pop> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Scaffold(
-            appBar: AppBar(
-          title: Text("Home"),
-        )),
-        ButtonBar(
-          alignment: MainAxisAlignment.start,
-          children: [
-            Column(children: [
-              const SizedBox(
-                height: 100,
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(createRoute());
-                  },
-                  child: const Text('First Question')),
-              ElevatedButton(
-                  onPressed: () {}, child: const Text('Secod question')),
-              ElevatedButton(
-                  onPressed: () {}, child: const Text('Third question')),
-            ]),
-          ],
-        ),
-      ],
-    );
+    return Container();
   }
 }

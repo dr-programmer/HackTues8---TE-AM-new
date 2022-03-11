@@ -1,31 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(
-    const MaterialApp(
-      home: Page1(),
-    ),
-  );
-}
-
-class Page1 extends StatelessWidget {
-  const Page1({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(createRoute());
-          },
-          child: const Text('Go!'),
-        ),
-      ),
-    );
-  }
-}
 
 Route createRoute() {
   return PageRouteBuilder(
@@ -54,17 +28,38 @@ class Page2 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 81, 0, 187),
       ),
-      body: Stack(children: const [
-        Align(
-          alignment: Alignment.topCenter,
-          child: Text('This is space'),
-        ),
-      ]),
-      floatingActionButton: FloatingActionButton.small(
-        onPressed: (() {}),
-        backgroundColor: Color.fromARGB(255, 81, 0, 187),
-      ),
-      backgroundColor: Color.fromARGB(255, 0, 55, 100),
+      body: UpdateText(),
     );
+  }
+}
+
+class UpdateText extends StatefulWidget {
+  UpdateTextState createState() => UpdateTextState();
+}
+
+class UpdateTextState extends State {
+  String textHolder = 'Old Sample Text...!!!';
+
+  changeText() {
+    setState(() {
+      textHolder = 'New Sample Text...';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Color.fromARGB(255, 0, 55, 100),
+        body: Align(
+            child: Column(children: <Widget>[
+          Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+              child: Text('$textHolder', style: TextStyle(fontSize: 21))),
+          FloatingActionButton(
+            onPressed: () => changeText(),
+            backgroundColor: Color.fromARGB(255, 81, 0, 187),
+            child: const Text('next'),
+          ),
+        ])));
   }
 }

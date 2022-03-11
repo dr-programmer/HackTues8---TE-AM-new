@@ -69,7 +69,7 @@ class NinjaCard extends StatelessWidget {
             ),
             const SizedBox(height: 30.0),
             const Text(
-              'CURRENT NINJA LEVEL',
+              'CURRENT SIRIUS LEVEL',
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
