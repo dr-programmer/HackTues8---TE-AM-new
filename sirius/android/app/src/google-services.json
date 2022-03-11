@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "259323303306",
+    "project_id": "hacktues8---te-am",
+    "storage_bucket": "hacktues8---te-am.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259323303306:android:24ca858865ab3f40dd2473",
+        "android_client_info": {
+          "package_name": "com.team.sirius"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259323303306-rb1ad1ssaqtt7o2mmpccdcolh41dasot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw7xYR9riYvVvjtDJobaYFcBo1kvRxsEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259323303306-rb1ad1ssaqtt7o2mmpccdcolh41dasot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
