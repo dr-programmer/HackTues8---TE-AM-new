@@ -30,14 +30,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-<<<<<<< Updated upstream
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-=======
     myHomePage(),
->>>>>>> Stashed changes
     Text(
       'Index 1: Business',
       style: optionStyle,
@@ -54,12 +47,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< Updated upstream
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
-=======
->>>>>>> Stashed changes
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -68,16 +55,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-<<<<<<< Updated upstream
-            backgroundColor: Colors.red,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-            backgroundColor: Colors.green,
-=======
             backgroundColor: Colors.yellow,
->>>>>>> Stashed changes
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.question_mark),
@@ -85,13 +63,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
-<<<<<<< Updated upstream
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-=======
             icon: Icon(Icons.account_circle),
             label: 'Account',
->>>>>>> Stashed changes
             backgroundColor: Colors.pink,
           ),
         ],
