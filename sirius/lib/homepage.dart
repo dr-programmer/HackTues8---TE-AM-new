@@ -25,13 +25,13 @@ class _myHomePageState extends State<myHomePage> {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(100, 350, 0, 10),
-            child:
-                ElevatedButton(onPressed: () {}, child: const Icon(Icons.star)),
+            child: FloatingActionButton(
+                onPressed: () {}, child: const Icon(Icons.star)),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(250, 230, 0, 10),
             //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
-            child: ElevatedButton(
+            child: FloatingActionButton(
               onPressed: () {},
               child: const Icon(Icons.star),
             ),
@@ -39,7 +39,7 @@ class _myHomePageState extends State<myHomePage> {
           Padding(
             padding: const EdgeInsets.fromLTRB(150, 100, 0, 500),
             //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
-            child: ElevatedButton(
+            child: FloatingActionButton(
               onPressed: () {},
               child: const Icon(Icons.star),
             ),
@@ -47,7 +47,7 @@ class _myHomePageState extends State<myHomePage> {
           Padding(
             padding: const EdgeInsets.fromLTRB(230, 500, 0, 0),
             //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
-            child: ElevatedButton(
+            child: FloatingActionButton(
               onPressed: () {},
               child: const Icon(Icons.star),
             ),
@@ -55,7 +55,7 @@ class _myHomePageState extends State<myHomePage> {
           Padding(
             padding: const EdgeInsets.fromLTRB(60, 600, 0, 0),
             //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
-            child: ElevatedButton(
+            child: FloatingActionButton(
               //backgroundColor: Colors.blue,
               onPressed: () {
                 Navigator.of(context).push(createRoute());
