@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'PopUp.dart';
 import 'main2.dart';
 
 void main() => runApp(const MyApp());

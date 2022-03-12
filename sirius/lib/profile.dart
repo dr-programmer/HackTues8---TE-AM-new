@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sirius/Variables.dart';
 import 'main.dart';
 import 'menu_item.dart';
 import 'menu_items.dart';
@@ -51,7 +52,7 @@ class NinjaCard extends StatelessWidget {
             ),
             const SizedBox(height: 10.0),
             const Text(
-              'Chun-Li',
+              'Admin',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -69,7 +70,7 @@ class NinjaCard extends StatelessWidget {
             ),
             const SizedBox(height: 10.0),
             const Text(
-              'Beijing, China',
+              'Sofia, Bulgaria',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -79,16 +80,16 @@ class NinjaCard extends StatelessWidget {
             ),
             const SizedBox(height: 30.0),
             const Text(
-              'CURRENT SIRIUS LEVEL',
+              'CURRENT SIRIUS XP',
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
               ),
             ),
             const SizedBox(height: 10.0),
-            const Text(
-              '8',
-              style: TextStyle(
+            Text(
+              sxp,
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 28.0,
@@ -104,7 +105,7 @@ class NinjaCard extends StatelessWidget {
                 ),
                 SizedBox(width: 10.0),
                 Text(
-                  'chun.li@thenetninja.co.uk',
+                  'admin@te-am.com',
                   style: TextStyle(
                     color: Colors.grey[400],
                     fontSize: 18.0,
@@ -112,6 +113,9 @@ class NinjaCard extends StatelessWidget {
                   ),
                 )
               ],
+            ),
+            const SizedBox(
+              height: 130,
             ),
           ],
         ),

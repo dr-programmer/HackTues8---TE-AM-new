@@ -1,8 +1,5 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
-import 'FirstQuestion.dart';
-import 'PopUp.dart';
+import 'Question.dart';
 
 void main() => runApp(const myHomePage());
 
@@ -26,10 +23,6 @@ class _myHomePageState extends State<myHomePage> {
               title: const Text('Home Page'),
               backgroundColor: Color.fromARGB(255, 0, 55, 100),
             ),
-            /*
-            body: FittedBox(
-                fit: BoxFit.fill, child: Image.asset('Images/universe.gif')),
-                */
             backgroundColor: Color.fromARGB(255, 0, 55, 100),
           ),
           Padding(
@@ -77,7 +70,10 @@ class _myHomePageState extends State<myHomePage> {
                 backgroundColor: Color.fromARGB(255, 81, 0, 187),
                 //backgroundColor: Colors.blue,
                 onPressed: () {
-                  Navigator.of(context).push(createRoute());
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Question(id: 1)),
+                  );
                 },
                 icon: const Icon(Icons.star),
                 label: const Text('Level 1')),
