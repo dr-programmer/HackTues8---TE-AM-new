@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(_title),
-          backgroundColor: Color.fromARGB(255, 0, 55, 100),
+          backgroundColor: Color.fromARGB(255, 42, 26, 116),
         ),
         body: const MyStatefulWidget(),
       ),
@@ -37,7 +37,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 0, 55, 100),
+      color: Color.fromARGB(255, 42, 26, 116),
       child: Padding(
           padding: const EdgeInsets.all(10),
           child: ListView(
@@ -99,7 +99,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Color.fromARGB(255, 17, 8, 56),
                     ),
                     child: const Text('Login'),
                     onPressed: () {

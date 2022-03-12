@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'Variables.dart';
 
@@ -27,21 +29,80 @@ class _QuestionState extends State<Question> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 55, 100),
+      backgroundColor: Color.fromARGB(255, 42, 26, 116),
       appBar: AppBar(
-        title: const Text("Question 1"),
-        backgroundColor: Color.fromARGB(255, 0, 55, 100),
+        title: Text('Question' + idQ.toString()),
+        backgroundColor: Color.fromARGB(255, 42, 26, 116),
       ),
       body: Column(
         children: [
-          ElevatedButton(
-            child: const Text('RotationTansition'),
-            onPressed: () {
-              Navigator.push(context, RotationRoute(page: Question(id: 2)));
-              xp += 100;
-              sxp = xp.toString();
-            },
+          const SafeArea(
+            child: SizedBox(
+              height: 230,
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  "What is the brightest star in the Earth's night sky?",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
+                ),
+              ),
+            ),
           ),
+          Stack(children: [
+            Container(
+              margin: EdgeInsets.all(30),
+              height: 300,
+              child: Align(
+                child: ButtonBar(
+                  alignment: MainAxisAlignment.center,
+                  buttonPadding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  children: [
+                    FloatingActionButton.extended(
+                      onPressed: () {},
+                      label: Text('Scorpius' + idQ.toString()),
+                      backgroundColor: Color.fromARGB(255, 81, 0, 187),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    FloatingActionButton.extended(
+                      onPressed: () {
+                        xp += 100;
+                        sxp = xp.toString();
+                      },
+                      label: Text('Sirius' + idQ.toString()),
+                      backgroundColor: Color.fromARGB(255, 81, 0, 187),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    FloatingActionButton.extended(
+                      onPressed: () {},
+                      label: Text('Leo' + idQ.toString()),
+                      backgroundColor: Color.fromARGB(255, 81, 0, 187),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomCenter,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 81, 0, 187),
+                ),
+                child: const Text('Next'),
+                onPressed: () {
+                  Navigator.push(
+                      context, FadeRoute(page: Question(id: idQ + 1)));
+                },
+              ),
+            )
+          ]),
         ],
       ),
     );
@@ -49,9 +110,9 @@ class _QuestionState extends State<Question> {
   }
 }
 
-class RotationRoute extends PageRouteBuilder {
+class FadeRoute extends PageRouteBuilder {
   final Widget page;
-  RotationRoute({required this.page})
+  FadeRoute({required this.page})
       : super(
           pageBuilder: (
             BuildContext context,
@@ -59,23 +120,14 @@ class RotationRoute extends PageRouteBuilder {
             Animation<double> secondaryAnimation,
           ) =>
               page,
-          transitionDuration: Duration(seconds: 1),
           transitionsBuilder: (
             BuildContext context,
             Animation<double> animation,
             Animation<double> secondaryAnimation,
             Widget child,
           ) =>
-              RotationTransition(
-            turns: Tween<double>(
-              begin: 0.0,
-              end: 1.0,
-            ).animate(
-              CurvedAnimation(
-                parent: animation,
-                curve: Curves.linear,
-              ),
-            ),
+              FadeTransition(
+            opacity: animation,
             child: child,
           ),
         );

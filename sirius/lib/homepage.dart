@@ -21,9 +21,9 @@ class _myHomePageState extends State<myHomePage> {
             appBar: AppBar(
               centerTitle: true,
               title: const Text('Home Page'),
-              backgroundColor: Color.fromARGB(255, 0, 55, 100),
+              backgroundColor: Color.fromARGB(255, 42, 26, 116),
             ),
-            backgroundColor: Color.fromARGB(255, 0, 55, 100),
+            backgroundColor: Color.fromARGB(255, 42, 26, 116),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(100, 350, 0, 10),
