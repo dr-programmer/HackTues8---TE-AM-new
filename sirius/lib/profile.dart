@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'menu_item.dart';
+import 'menu_items.dart';
 
 void main() => runApp(const MaterialApp(
       home: NinjaCard(),
@@ -13,6 +15,14 @@ class NinjaCard extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 55, 100),
       appBar: AppBar(
+        actions: [
+          PopupMenuButton<MenuItem>(
+            onSelected: (item) => onSelected(context, item),
+            itemBuilder: (context) => [
+              ...MenuItems.itemsFirst.map(buildItem).toList(),
+            ],
+          )
+        ],
         title: const Text('Account'),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 0, 55, 100),
@@ -107,5 +117,25 @@ class NinjaCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  PopupMenuItem<MenuItem> buildItem(MenuItem item) => PopupMenuItem<MenuItem>(
+      value: item,
+      child: Row(
+        children: [
+          Icon(item.icon, color: Colors.black, size: 20),
+          const SizedBox(width: 12),
+          Text(item.text),
+        ],
+      ));
+
+  void onSelected(BuildContext context, MenuItem item) {
+    switch (item) {
+      case MenuItems.itemSignOut:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => MyApp()),
+        );
+        break;
+    }
   }
 }

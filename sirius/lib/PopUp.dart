@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'FirstQuestion.dart';
 
 Route createRoute() {
   return PageRouteBuilder(
@@ -19,9 +20,9 @@ Route createRoute() {
   );
 }
 
-Route createRoutePopUp() {
+Route createRouteNew() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
+    pageBuilder: (context, animation, secondaryAnimation) => const Pop(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       const begin = Offset(0.0, 1.0);
       const end = Offset.zero;
@@ -43,24 +44,24 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 0, 55, 100),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 81, 0, 187),
+        backgroundColor: Color.fromARGB(255, 0, 55, 100),
       ),
-      body: UpdateText(),
-    );
-  }
-}
-
-class PagePopUp extends StatelessWidget {
-  const PagePopUp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 81, 0, 187),
+      body: Container(
+        child: const Align(
+          alignment: Alignment.topCenter,
+          child: Text("First Material",
+              style: TextStyle(color: Colors.white, fontSize: 25)),
+        ),
       ),
-      body: const AlertDialog(),
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            Navigator.of(context).push(createRouteNew());
+          },
+          backgroundColor: Color.fromARGB(255, 81, 0, 187),
+          label: const Text('Next'),
+          icon: const Icon(Icons.star)),
     );
   }
 }
