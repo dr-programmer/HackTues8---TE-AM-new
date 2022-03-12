@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'profile.dart';
 import 'homepage.dart';
+import 'BlogPage.dart';
 
 void main() => runApp(const MyApp());
 
@@ -32,10 +33,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     myHomePage(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    InfoCard(),
     NinjaCard(),
   ];
 
@@ -61,7 +59,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.question_mark),
-            label: 'Something',
+            label: 'SIRIUS Blog',
             backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(

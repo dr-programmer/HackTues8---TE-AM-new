@@ -19,6 +19,24 @@ Route createRoute() {
   );
 }
 
+Route createRoutePopUp() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(0.0, 1.0);
+      const end = Offset.zero;
+      const curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
+}
+
 class Page2 extends StatelessWidget {
   const Page2({Key? key}) : super(key: key);
 
@@ -29,6 +47,20 @@ class Page2 extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 81, 0, 187),
       ),
       body: UpdateText(),
+    );
+  }
+}
+
+class PagePopUp extends StatelessWidget {
+  const PagePopUp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 81, 0, 187),
+      ),
+      body: const AlertDialog(),
     );
   }
 }
@@ -54,7 +86,8 @@ class UpdateTextState extends State {
             child: Column(children: <Widget>[
           Container(
               padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-              child: Text('$textHolder', style: TextStyle(fontSize: 21))),
+              child: Text('$textHolder',
+                  style: TextStyle(fontSize: 21, color: Colors.white))),
           FloatingActionButton(
             onPressed: () => changeText(),
             backgroundColor: Color.fromARGB(255, 81, 0, 187),
