@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'FirstQuestion.dart';
 import 'PopUp.dart';
 
 void main() => runApp(const myHomePage());
