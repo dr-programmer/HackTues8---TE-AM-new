@@ -50,10 +50,10 @@ class NinjaCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            Text(
+            const Text(
               'Chun-Li',
               style: TextStyle(
-                color: Colors.amberAccent[200],
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 28.0,
                 letterSpacing: 2.0,
@@ -67,11 +67,11 @@ class NinjaCard extends StatelessWidget {
                 letterSpacing: 2.0,
               ),
             ),
-            SizedBox(height: 10.0),
-            Text(
+            const SizedBox(height: 10.0),
+            const Text(
               'Beijing, China',
               style: TextStyle(
-                color: Colors.amberAccent[200],
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 28.0,
                 letterSpacing: 2.0,
@@ -86,10 +86,10 @@ class NinjaCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10.0),
-            Text(
+            const Text(
               '8',
               style: TextStyle(
-                color: Colors.amberAccent[200],
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 28.0,
                 letterSpacing: 2.0,
@@ -123,9 +123,12 @@ class NinjaCard extends StatelessWidget {
       value: item,
       child: Row(
         children: [
-          Icon(item.icon, color: Colors.black, size: 20),
-          const SizedBox(width: 12),
-          Text(item.text),
+          Icon(item.icon, color: Color.fromARGB(255, 0, 55, 100), size: 20),
+          //const SizedBox(width: 12),
+          Text(
+            item.text,
+            style: TextStyle(color: Color.fromARGB(255, 0, 55, 100)),
+          ),
         ],
       ));
 

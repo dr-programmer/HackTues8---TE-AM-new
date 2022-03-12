@@ -22,9 +22,14 @@ class _myHomePageState extends State<myHomePage> {
         children: <Widget>[
           Scaffold(
             appBar: AppBar(
+              centerTitle: true,
               title: const Text('Home Page'),
               backgroundColor: Color.fromARGB(255, 0, 55, 100),
             ),
+            /*
+            body: FittedBox(
+                fit: BoxFit.fill, child: Image.asset('Images/universe.gif')),
+                */
             backgroundColor: Color.fromARGB(255, 0, 55, 100),
           ),
           Padding(

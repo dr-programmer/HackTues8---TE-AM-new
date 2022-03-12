@@ -15,6 +15,7 @@ class InfoCard extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 0, 55, 100),
         appBar: AppBar(
           title: const Text('Daily SIRIUS Blog'),
+          centerTitle: true,
           backgroundColor: Color.fromARGB(255, 0, 55, 100),
         ),
         body: Column(
@@ -71,12 +72,34 @@ class SecondPage extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 0, 55, 100),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 55, 100),
-        title: const Text('Serious'),
+        title: const Text('SIRIUS - Star or App'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text('You are interested in this topic?',
-            style: TextStyle(color: Colors.white)),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset('Images/SIRIUSinBlog.jpg'),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(10),
+            child: Text(
+                "Sirius, also known as the Dog Star or Sirius A, is the brightest star in Earth's night sky. The name means 'glowing' in Greek — a fitting description, as only a few planets, the full moon and the International Space Station outshine this star.",
+                style: TextStyle(color: Colors.white, fontSize: 20)),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const Padding(
+            padding: EdgeInsets.all(10),
+            child: Text(
+                "Most interestingly our app is also called Sirius. It is the brightest creation we have made yet.",
+                style: TextStyle(color: Colors.white, fontSize: 20)),
+          ),
+        ],
       ),
     );
   }
