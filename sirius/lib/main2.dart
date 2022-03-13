@@ -59,7 +59,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
-            label: 'SIRIUS Blog',
+            label: 'SIRIUS Material',
             backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(

@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "259323303306",
-    "project_id": "hacktues8---te-am",
-    "storage_bucket": "hacktues8---te-am.appspot.com"
+    "project_number": "780531087067",
+    "project_id": "sirius-bb7a3",
+    "storage_bucket": "sirius-bb7a3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:259323303306:android:24ca858865ab3f40dd2473",
+        "mobilesdk_app_id": "1:780531087067:android:6733469ae5c11608a2fefe",
         "android_client_info": {
-          "package_name": "com.team.sirius"
+          "package_name": "com.example.sirius"
         }
       },
       "oauth_client": [
         {
-          "client_id": "259323303306-rb1ad1ssaqtt7o2mmpccdcolh41dasot.apps.googleusercontent.com",
+          "client_id": "780531087067-4uasr9mf45dvvm6sraq3ju3172jakvct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sirius",
+            "certificate_hash": "766ceb91bf7bc63736fd1c382d0d30ebd4e58f17"
+          }
+        },
+        {
+          "client_id": "780531087067-hkefhi8vvfbc2k1il2uedpt1i9e7d9ch.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAw7xYR9riYvVvjtDJobaYFcBo1kvRxsEE"
+          "current_key": "AIzaSyC9zIp4eill99sMjh8G5pOCzKWm_SjKo8A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "259323303306-rb1ad1ssaqtt7o2mmpccdcolh41dasot.apps.googleusercontent.com",
+              "client_id": "780531087067-hkefhi8vvfbc2k1il2uedpt1i9e7d9ch.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

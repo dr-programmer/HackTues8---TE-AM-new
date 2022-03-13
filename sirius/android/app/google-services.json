@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "780531087067",
+    "project_id": "sirius-bb7a3",
+    "storage_bucket": "sirius-bb7a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780531087067:android:6733469ae5c11608a2fefe",
+        "android_client_info": {
+          "package_name": "com.example.sirius"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780531087067-4uasr9mf45dvvm6sraq3ju3172jakvct.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sirius",
+            "certificate_hash": "766ceb91bf7bc63736fd1c382d0d30ebd4e58f17"
+          }
+        },
+        {
+          "client_id": "780531087067-hkefhi8vvfbc2k1il2uedpt1i9e7d9ch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9zIp4eill99sMjh8G5pOCzKWm_SjKo8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780531087067-hkefhi8vvfbc2k1il2uedpt1i9e7d9ch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -12,19 +12,20 @@ class AboutPage extends StatefulWidget {
 class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Align(
-        alignment: Alignment.topCenter,
-        child: Text(
-          'About SIRIUS',
-          style: TextStyle(
-              fontSize: 25, color: Color.fromARGB(255, 189, 184, 235)),
-        ),
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 42, 26, 116),
+      appBar: AppBar(
+        title: const Text("About SIRIUS"),
+        backgroundColor: Color.fromARGB(255, 42, 26, 116),
       ),
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('Images/GALAXYPHOTO.jpg'),
-          fit: BoxFit.cover,
+      body: Container(
+        child: Column(
+          children: const [
+            Text(
+              "Made by TE-AM",
+              style: TextStyle(fontSize: 25, color: Colors.white),
+            ),
+          ],
         ),
       ),
     );

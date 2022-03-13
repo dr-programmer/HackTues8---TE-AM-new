@@ -3,6 +3,7 @@ import 'package:sirius/Variables.dart';
 import 'main.dart';
 import 'menu_item.dart';
 import 'menu_items.dart';
+import 'about.dart';
 
 void main() => runApp(const MaterialApp(
       home: NinjaCard(),

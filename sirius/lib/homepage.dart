@@ -72,7 +72,7 @@ class _myHomePageState extends State<myHomePage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Question(id: 1)),
+                    MaterialPageRoute(builder: (context) => Question(id: 0)),
                   );
                 },
                 icon: const Icon(Icons.star),
