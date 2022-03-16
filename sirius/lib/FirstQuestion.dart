@@ -13,6 +13,13 @@ class Pop extends StatefulWidget {
 class _PopState extends State<Pop> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 0, 55, 100),
+      appBar: AppBar(
+        title: const Text('First question'),
+        backgroundColor: Color.fromARGB(255, 0, 55, 100),
+      ),
+      body: const Text('Hello'),
+    );
   }
 }

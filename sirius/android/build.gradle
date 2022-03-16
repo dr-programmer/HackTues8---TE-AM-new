@@ -16,7 +16,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        google()  // Google's Maven repository
     }
 }
 
