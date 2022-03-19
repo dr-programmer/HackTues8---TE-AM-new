@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sirius/Widgets.dart/Widgets.dart';
 import 'Question.dart';
 
 void main() => runApp(const myHomePage());
@@ -11,8 +12,17 @@ class myHomePage extends StatefulWidget {
 }
 
 class _myHomePageState extends State<myHomePage> {
+  _myFunction() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Question(id: 0)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    double mywidth = MediaQuery.of(context).size.width;
+    double myheight = MediaQuery.of(context).size.height;
     return Container(
       //color: Color.fromARGB(255, 0, 80, 146),
       child: Stack(
@@ -25,60 +35,11 @@ class _myHomePageState extends State<myHomePage> {
             ),
             backgroundColor: Color.fromARGB(255, 42, 26, 116),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(100, 350, 0, 10),
-            child: FloatingActionButton.extended(
-                backgroundColor: Color.fromARGB(255, 81, 0, 187),
-                onPressed: () {},
-                icon: const Icon(Icons.star),
-                label: const Text('Level 3')),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(250, 230, 0, 10),
-            //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
-            child: FloatingActionButton.extended(
-              backgroundColor: Color.fromARGB(255, 81, 0, 187),
-              onPressed: () {},
-              icon: const Icon(Icons.star),
-              label: const Text('Level 4'),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(150, 100, 0, 500),
-            //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
-            child: FloatingActionButton.extended(
-              backgroundColor: Color.fromARGB(255, 81, 0, 187),
-              onPressed: () {},
-              icon: const Icon(Icons.star),
-              label: const Text('Level 5'),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(230, 500, 0, 0),
-            //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
-            child: FloatingActionButton.extended(
-              backgroundColor: Color.fromARGB(255, 81, 0, 187),
-              onPressed: () {},
-              icon: const Icon(Icons.star),
-              label: const Text('Level 2'),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(60, 600, 0, 0),
-            //padding: const EdgeInsets.fromLTRB(left, top, right, bottom)
-            child: FloatingActionButton.extended(
-                backgroundColor: Color.fromARGB(255, 81, 0, 187),
-                //backgroundColor: Colors.blue,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Question(id: 0)),
-                  );
-                },
-                icon: const Icon(Icons.star),
-                label: const Text('Level 1')),
-          ),
-          //const Testing(),
+          HPButtons("Level 5", 0.55, 0.1, _myFunction),
+          HPButtons("Level 4", 0.35, 0.55, _myFunction),
+          HPButtons("Level 3", 0.35, 0.1, _myFunction),
+          HPButtons("Level 2", 0.15, 0.55, _myFunction),
+          HPButtons("Level 1", 0.15, 0.1, _myFunction),
         ],
       ),
     );
