@@ -22,31 +22,43 @@ class HPButtons extends StatelessWidget {
           child: ButtonTheme(
             minWidth: wl,
             height: hl,
-            child: RaisedButton(
-              onPressed: onPressed,
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30.0),
-                  topRight: Radius.circular(30.0),
-                  bottomLeft: Radius.circular(30.0),
-                  bottomRight: Radius.circular(30.0),
-                ),
-              ),
-              color: Color.fromARGB(255, 81, 0, 187),
-              child: Row(
-                children: [
-                  const Icon(
-                    Icons.star,
-                    color: Colors.white,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    name,
-                    style: TextStyle(color: Colors.white),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 138, 75, 221),
+                    offset: Offset(0.0, 1.0), //(x,y)
+                    blurRadius: 10.0,
                   ),
                 ],
+              ),
+              child: RaisedButton(
+                onPressed: onPressed,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30.0),
+                    topRight: Radius.circular(30.0),
+                    bottomLeft: Radius.circular(30.0),
+                    bottomRight: Radius.circular(30.0),
+                  ),
+                ),
+                color: Color.fromARGB(255, 81, 0, 187),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.star,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      name,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
