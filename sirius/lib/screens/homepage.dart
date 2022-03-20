@@ -21,26 +21,87 @@ class _myHomePageState extends State<myHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double mywidth = MediaQuery.of(context).size.width;
-    double myheight = MediaQuery.of(context).size.height;
-    return Container(
-      //color: Color.fromARGB(255, 0, 80, 146),
-      child: Stack(
-        children: <Widget>[
-          Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: const Text('Home Page'),
-              backgroundColor: Color.fromARGB(255, 42, 26, 116),
+    return GestureDetector(
+      onHorizontalDragUpdate: ((details) {
+        if (details.delta.dx < 0) {
+          print("You swiped!!!");
+        }
+      }),
+      child: Container(
+        child: Stack(
+          children: <Widget>[
+            Scaffold(
+              appBar: AppBar(
+                centerTitle: true,
+                title: const Text('Home Page'),
+                flexibleSpace: Container(
+                  decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          colors: [
+                        Color.fromARGB(255, 112, 114, 190),
+                        Color.fromARGB(255, 144, 202, 250)
+                      ])),
+                ),
+              ),
+              body: Stack(
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [
+                          Color.fromARGB(255, 112, 114, 190),
+                          Color.fromARGB(255, 144, 202, 250)
+                        ])),
+                  ),
+                  Positioned(
+                    top: 43,
+                    left: 37,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          colors: [
+                            Color.fromARGB(255, 164, 166, 211),
+                            Color.fromARGB(255, 116, 119, 201),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: SizedBox(
+                        height: 100,
+                        width: 330,
+                        child: Column(
+                          children: const [
+                            SizedBox(
+                              height: 35,
+                            ),
+                            Text(
+                              "Hello! Want to learn something?",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 81, 0, 187),
+                                fontSize: 23,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  HPButtons("Level 5", 0.65, 0.1, 100, 150, _myFunction),
+                  HPButtons("Level 4", 0.45, 0.55, 100, 150, _myFunction),
+                  HPButtons("Level 3", 0.42, 0.1, 150, 150, _myFunction),
+                  HPButtons("Level 2", 0.22, 0.55, 150, 150, _myFunction),
+                  HPButtons("Level 1", 0.25, 0.1, 100, 150, _myFunction),
+                ],
+              ),
             ),
-            backgroundColor: Color.fromARGB(255, 42, 26, 116),
-          ),
-          HPButtons("Level 5", 0.55, 0.1, _myFunction),
-          HPButtons("Level 4", 0.35, 0.55, _myFunction),
-          HPButtons("Level 3", 0.35, 0.1, _myFunction),
-          HPButtons("Level 2", 0.15, 0.55, _myFunction),
-          HPButtons("Level 1", 0.15, 0.1, _myFunction),
-        ],
+          ],
+        ),
       ),
     );
   }

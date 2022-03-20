@@ -50,7 +50,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 17, 8, 56),
+        backgroundColor: Colors.white,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -70,9 +70,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Color.fromARGB(255, 110, 102, 199),
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
     );
   }
 }
+
+
+/*
+Color.fromARGB(255, 17, 8, 56),
+*/

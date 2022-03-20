@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class HPButtons extends StatelessWidget {
-  HPButtons(this.name, this.h, this.w, this.onPressed);
+  HPButtons(this.name, this.h, this.w, this.hl, this.wl, this.onPressed);
 
   final String name;
   final double h;
   final double w;
+  final double hl;
+  final double wl;
   final VoidCallback onPressed;
 
   @override
@@ -18,8 +20,8 @@ class HPButtons extends StatelessWidget {
           top: myheight * h,
           left: mywidth * w,
           child: ButtonTheme(
-            minWidth: 150,
-            height: 100,
+            minWidth: wl,
+            height: hl,
             child: RaisedButton(
               onPressed: onPressed,
               shape: const RoundedRectangleBorder(
