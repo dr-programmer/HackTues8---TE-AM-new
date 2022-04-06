@@ -40,6 +40,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.10
+  cloud_firestore: ^2.0.0
   dismissible_page: ^0.7.2
   circular_clip_route: ^0.2.0+3
 

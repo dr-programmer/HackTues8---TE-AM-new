@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sirius/reusable_widgets/reusable_widget.dart';
+import 'package:sirius/screens/Variables.dart';
 import 'package:sirius/utils/color_utils.dart';
 import 'home_screen.dart';
 
@@ -31,8 +33,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [                hexStringToColor("000000"),
-                hexStringToColor("000000")
+              gradient: LinearGradient(colors: [
+            hexStringToColor("000000"),
+            hexStringToColor("000000")
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           child: SingleChildScrollView(
               child: Padding(
@@ -58,12 +61,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 20,
                 ),
                 signInSignUpButton(context, false, () {
+                  email = _emailTextController.text;
                   FirebaseAuth.instance
                       .createUserWithEmailAndPassword(
                           email: _emailTextController.text,
                           password: _passwordTextController.text)
                       .then((value) async {
                     print("Created New Account");
+                    FirebaseFirestore.instance
+                        .collection('Users')
+                        .doc(email)
+                        .set({'xp': '0'});
                     Navigator.push(
                         context,
                         MaterialPageRoute(

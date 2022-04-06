@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:sirius/Widgets.dart/Widgets.dart';
 import 'Question.dart';
+import 'Variables.dart';
 
 void main() => runApp(const myHomePage());
 
@@ -21,8 +23,16 @@ class _myHomePageState extends State<myHomePage> {
     );
   }
 
+  _mySetXP() {
+    FirebaseFirestore.instance
+        .collection('Users')
+        .doc(email)
+        .update({'xp': sxp});
+  }
+
   @override
   Widget build(BuildContext context) {
+    _mySetXP();
     return GestureDetector(
       onHorizontalDragUpdate: ((details) {
         if (details.delta.dx < 0) {
@@ -36,14 +46,7 @@ class _myHomePageState extends State<myHomePage> {
               centerTitle: true,
               title: const Text('Home Page'),
               flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                        colors: [
-                      Color.fromARGB(255, 112, 114, 190),
-                      Color.fromARGB(255, 144, 202, 250)
-                    ])),
+                color: Color.fromARGB(255, 42, 26, 116),
               ),
             ),
             body: Stack(
@@ -51,14 +54,7 @@ class _myHomePageState extends State<myHomePage> {
                 Stack(
                   children: [
                     Container(
-                      decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [
-                            Color.fromARGB(255, 112, 114, 190),
-                            Color.fromARGB(255, 144, 202, 250)
-                          ])),
+                      color: Color.fromARGB(255, 42, 26, 116),
                     ),
                     Center(
                       child: Column(
@@ -167,6 +163,30 @@ class _myHomePageState extends State<myHomePage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class AddData extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Text("geeksforgeeks"),
+      ),
+      body: Center(
+        child: FloatingActionButton(
+          backgroundColor: Colors.green,
+          child: Icon(Icons.add),
+          onPressed: () {
+            FirebaseFirestore.instance
+                .collection('data')
+                .doc('xpdoc')
+                .update({'xp': sxp});
+          },
+        ),
       ),
     );
   }

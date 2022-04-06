@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,13 @@ class _QuestionState extends State<Question> {
     if (idQ < 0) {
       idQ = 0;
     }
+  }
+
+  _mySetXP() {
+    FirebaseFirestore.instance
+        .collection('data')
+        .doc('xpdoc')
+        .update({'xp': sxp});
   }
 
   Widget build(BuildContext context) {

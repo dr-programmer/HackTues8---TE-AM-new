@@ -3,6 +3,7 @@ String sxp = '0';
 
 String uname = 'Admin';
 String upassword = 'Admin';
+String email = '';
 
 int count = 0;
 int i = 0;

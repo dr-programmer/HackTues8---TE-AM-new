@@ -20,25 +20,11 @@ class InfoCard extends StatelessWidget {
           title: const Text('SIRIUS Material'),
           centerTitle: true,
           flexibleSpace: Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [
-                  Color.fromARGB(255, 112, 114, 190),
-                  Color.fromARGB(255, 144, 202, 250)
-                ])),
+            color: Color.fromARGB(255, 42, 26, 116),
           ),
         ),
         body: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [
-                Color.fromARGB(255, 112, 114, 190),
-                Color.fromARGB(255, 144, 202, 250)
-              ])),
+          color: Color.fromARGB(255, 42, 26, 116),
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
