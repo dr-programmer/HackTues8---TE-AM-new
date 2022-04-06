@@ -36,7 +36,6 @@ class NinjaCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _mySetXP();
     return Scaffold(
         //backgroundColor: Color.fromARGB(255, 42, 26, 116),
         appBar: AppBar(
@@ -65,6 +64,8 @@ class NinjaCard extends StatelessWidget {
             if (snapshot.hasData) {
               var output = snapshot.data!.data();
               var value = output!['xp'];
+              if (xp == 0) sxp = value;
+              _mySetXP();
               return Stack(
                 children: [
                   Container(
@@ -102,8 +103,10 @@ class NinjaCard extends StatelessWidget {
                                             ),
                                           ),
                                           const Divider(
-                                            color: Colors.grey,
+                                            color: Color.fromARGB(
+                                                255, 255, 255, 255),
                                             height: 60.0,
+                                            thickness: 1,
                                           ),
                                           const Text(
                                             'NAME',
@@ -167,7 +170,7 @@ class NinjaCard extends StatelessWidget {
                                               ),
                                               const SizedBox(width: 10.0),
                                               Text(
-                                                'admin@te-am.com',
+                                                email,
                                                 style: TextStyle(
                                                   color: Colors.grey[400],
                                                   fontSize: 18.0,
@@ -236,6 +239,8 @@ class NinjaCard extends StatelessWidget {
         FirebaseAuth.instance.signOut().then((value) {
           // ignore: avoid_print
           print("Signed out");
+          sxp = '0';
+          xp = 0;
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const SignInScreen()));
         });

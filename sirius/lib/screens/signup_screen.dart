@@ -68,6 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           password: _passwordTextController.text)
                       .then((value) async {
                     print("Created New Account");
+                    sxp = '0';
                     FirebaseFirestore.instance
                         .collection('Users')
                         .doc(email)

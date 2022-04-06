@@ -23,16 +23,8 @@ class _myHomePageState extends State<myHomePage> {
     );
   }
 
-  _mySetXP() {
-    FirebaseFirestore.instance
-        .collection('Users')
-        .doc(email)
-        .update({'xp': sxp});
-  }
-
   @override
   Widget build(BuildContext context) {
-    _mySetXP();
     return GestureDetector(
       onHorizontalDragUpdate: ((details) {
         if (details.delta.dx < 0) {
