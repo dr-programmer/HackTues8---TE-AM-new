@@ -25,13 +25,6 @@ class HPButtons extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 138, 75, 221),
-                    offset: Offset(0.0, 1.0), //(x,y)
-                    blurRadius: 10.0,
-                  ),
-                ],
               ),
               child: RaisedButton(
                 onPressed: onPressed,

@@ -70,128 +70,126 @@ class NinjaCard extends StatelessWidget {
                 children: [
                   Container(
                     color: Color.fromARGB(255, 42, 26, 116),
-                    child: SingleChildScrollView(
-                      child: Stack(
-                        children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 0),
-                            child: Column(
-                              children: [
-                                Bounceable(
-                                  onTap: () {},
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      color: Color.fromARGB(255, 81, 0, 187),
-                                    ),
-                                    height: 500,
-                                    width: 500,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(10),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          const Center(
-                                            child: CircleAvatar(
-                                              radius: 40.0,
-                                              backgroundColor: Color.fromARGB(
-                                                  255, 110, 102, 199),
-                                              backgroundImage: AssetImage(
-                                                  'assets/thumb.jpg'),
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 0),
+                          child: Column(
+                            children: [
+                              Bounceable(
+                                onTap: () {},
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    color: Color.fromARGB(255, 81, 0, 187),
+                                  ),
+                                  height: 500,
+                                  width: 500,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        const Center(
+                                          child: CircleAvatar(
+                                            radius: 40.0,
+                                            backgroundColor: Color.fromARGB(
+                                                255, 110, 102, 199),
+                                            backgroundImage:
+                                                AssetImage('assets/thumb.jpg'),
+                                          ),
+                                        ),
+                                        const Divider(
+                                          color: Color.fromARGB(
+                                              255, 255, 255, 255),
+                                          height: 60.0,
+                                          thickness: 1,
+                                        ),
+                                        const Text(
+                                          'NAME',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            letterSpacing: 2.0,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 10.0),
+                                        const Text(
+                                          'Admin',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 28.0,
+                                            letterSpacing: 2.0,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 30.0),
+                                        const Text(
+                                          'HOMETOWN',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            letterSpacing: 2.0,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 10.0),
+                                        const Text(
+                                          'Sofia, Bulgaria',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 28.0,
+                                            letterSpacing: 2.0,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 30.0),
+                                        const Text(
+                                          'CURRENT SIRIUS XP',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            letterSpacing: 2.0,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 10.0),
+                                        Text(
+                                          value,
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 28.0,
+                                            letterSpacing: 2.0,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 30.0),
+                                        Row(
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.email,
+                                              color: Colors.grey[400],
                                             ),
-                                          ),
-                                          const Divider(
-                                            color: Color.fromARGB(
-                                                255, 255, 255, 255),
-                                            height: 60.0,
-                                            thickness: 1,
-                                          ),
-                                          const Text(
-                                            'NAME',
-                                            style: TextStyle(
-                                              color: Colors.grey,
-                                              letterSpacing: 2.0,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 10.0),
-                                          const Text(
-                                            'Admin',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 28.0,
-                                              letterSpacing: 2.0,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 30.0),
-                                          const Text(
-                                            'HOMETOWN',
-                                            style: TextStyle(
-                                              color: Colors.grey,
-                                              letterSpacing: 2.0,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 10.0),
-                                          const Text(
-                                            'Sofia, Bulgaria',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 28.0,
-                                              letterSpacing: 2.0,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 30.0),
-                                          const Text(
-                                            'CURRENT SIRIUS XP',
-                                            style: TextStyle(
-                                              color: Colors.grey,
-                                              letterSpacing: 2.0,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 10.0),
-                                          Text(
-                                            value,
-                                            style: const TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 28.0,
-                                              letterSpacing: 2.0,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 30.0),
-                                          Row(
-                                            children: <Widget>[
-                                              Icon(
-                                                Icons.email,
+                                            const SizedBox(width: 10.0),
+                                            Text(
+                                              email,
+                                              style: TextStyle(
                                                 color: Colors.grey[400],
+                                                fontSize: 18.0,
+                                                letterSpacing: 1.0,
                                               ),
-                                              const SizedBox(width: 10.0),
-                                              Text(
-                                                email,
-                                                style: TextStyle(
-                                                  color: Colors.grey[400],
-                                                  fontSize: 18.0,
-                                                  letterSpacing: 1.0,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ],
-                                      ),
+                                            )
+                                          ],
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 99,
-                                ),
-                              ],
-                            ),
+                              ),
+                              const SizedBox(
+                                height: 99,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   /*
