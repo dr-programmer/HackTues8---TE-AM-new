@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
@@ -64,6 +65,10 @@ class NinjaCard extends StatelessWidget {
             if (snapshot.hasData) {
               var output = snapshot.data!.data();
               int value = output!['xp'];
+              String vname = output['name'];
+              String vcountry = output['country'];
+              String vcity = output['city'];
+              String vpic = output['picture'];
               if (xp == 0) xp = value;
               _mySetXP();
               return Stack(
@@ -84,7 +89,7 @@ class NinjaCard extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(30),
                                     color: Color.fromARGB(255, 81, 0, 187),
                                   ),
-                                  height: 500,
+                                  height: 560,
                                   width: 500,
                                   child: Padding(
                                     padding: const EdgeInsets.all(10),
@@ -92,13 +97,13 @@ class NinjaCard extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        const Center(
+                                        Center(
                                           child: CircleAvatar(
-                                            radius: 40.0,
+                                            radius: 80.0,
                                             backgroundColor: Color.fromARGB(
                                                 255, 110, 102, 199),
                                             backgroundImage:
-                                                AssetImage('assets/thumb.jpg'),
+                                                NetworkImage(vpic.toString()),
                                           ),
                                         ),
                                         const Divider(
@@ -115,9 +120,9 @@ class NinjaCard extends StatelessWidget {
                                           ),
                                         ),
                                         const SizedBox(height: 10.0),
-                                        const Text(
-                                          'Admin',
-                                          style: TextStyle(
+                                        Text(
+                                          vname,
+                                          style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 28.0,
@@ -133,9 +138,9 @@ class NinjaCard extends StatelessWidget {
                                           ),
                                         ),
                                         const SizedBox(height: 10.0),
-                                        const Text(
-                                          'Sofia, Bulgaria',
-                                          style: TextStyle(
+                                        Text(
+                                          '$vcity, $vcountry',
+                                          style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 28.0,
