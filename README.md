@@ -6,7 +6,7 @@
 
 Инсталация: 
   + Click линка по долу и download файла, който се появява, на своето android устройство. След това инсталирайте download-натия файл, като го отворите. Готово, в страницата с приложения може да видите SIRIUS! 
-  + https://drive.google.com/file/d/1Ef9HPEbGsfqaeQrSsP2by_1fiwuuf6TM/view?usp=sharing
+  + https://drive.google.com/file/d/1RnAMCNrE1rnrd74LyFgIyq7LZvFPjnEK/view?usp=sharing
 
 Използвани технологии:
   + Flutter - https://flutter.dev/
