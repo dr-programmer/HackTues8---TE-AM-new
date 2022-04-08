@@ -14,5 +14,6 @@
   + Firebase - https://firebase.google.com/
 
 Автори на проекта:
-  + Дарий Топузов 8В клас - backend и frontend
-  + Антонио Готев 8В клас - backend и frontend
+  + Отбор TE-AM:
+    + Дарий Топузов 8В клас - backend и frontend
+    + Антонио Готев 8В клас - backend и frontend
