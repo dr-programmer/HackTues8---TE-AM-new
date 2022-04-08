@@ -31,7 +31,7 @@ class NinjaCard extends StatelessWidget {
     FirebaseFirestore.instance
         .collection('Users')
         .doc(email)
-        .update({'xp': sxp});
+        .update({'xp': xp});
   }
 
   @override
@@ -63,8 +63,8 @@ class NinjaCard extends StatelessWidget {
 
             if (snapshot.hasData) {
               var output = snapshot.data!.data();
-              var value = output!['xp'];
-              if (xp == 0) sxp = value;
+              int value = output!['xp'];
+              if (xp == 0) xp = value;
               _mySetXP();
               return Stack(
                 children: [
@@ -152,7 +152,7 @@ class NinjaCard extends StatelessWidget {
                                         ),
                                         const SizedBox(height: 10.0),
                                         Text(
-                                          value,
+                                          value.toString(),
                                           style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
@@ -182,9 +182,6 @@ class NinjaCard extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 99,
                               ),
                             ],
                           ),

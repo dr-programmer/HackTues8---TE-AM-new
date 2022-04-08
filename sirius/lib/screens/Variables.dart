@@ -1,6 +1,8 @@
 int xp = 0;
 String sxp = '0';
 
+var value = '0';
+
 String uname = 'Admin';
 String upassword = 'Admin';
 String email = '';
