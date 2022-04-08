@@ -9,7 +9,7 @@ void main() => runApp(const HomeScreen());
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
-  static const String _title = 'Flutter Code Sample';
+  static const String _title = 'SIRIUS';
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 17, 8, 56),
+        backgroundColor: Color.fromARGB(255, 42, 26, 116),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -70,9 +70,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Color.fromARGB(255, 110, 102, 199),
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Color.fromARGB(255, 255, 255, 255),
         onTap: _onItemTapped,
       ),
     );
   }
 }
+
+
+/*
+Color.fromARGB(255, 17, 8, 56),
+*/

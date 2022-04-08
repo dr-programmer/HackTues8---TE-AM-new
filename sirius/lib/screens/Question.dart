@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:page_flip_builder/page_flip_builder.dart';
 import 'Variables.dart';
 import 'home_screen.dart';
 
@@ -30,6 +32,13 @@ class _QuestionState extends State<Question> {
     if (idQ < 0) {
       idQ = 0;
     }
+  }
+
+  _mySetXP() {
+    FirebaseFirestore.instance
+        .collection('data')
+        .doc('xpdoc')
+        .update({'xp': sxp});
   }
 
   Widget build(BuildContext context) {
@@ -98,11 +107,11 @@ class _QuestionState extends State<Question> {
                               child: RaisedButton(
                                 shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(40.0),
-                                      topRight: Radius.circular(40.0),
-                                      bottomLeft: Radius.circular(40.0),
-                                      bottomRight: Radius.circular(40.0),
-                                    )),
+                                  topLeft: Radius.circular(40.0),
+                                  topRight: Radius.circular(40.0),
+                                  bottomLeft: Radius.circular(40.0),
+                                  bottomRight: Radius.circular(40.0),
+                                )),
                                 onPressed: () {
                                   Navigator.push(context,
                                       FadeRoute(page: Question(id: idQ + 1)));
@@ -139,11 +148,11 @@ class _QuestionState extends State<Question> {
                               child: RaisedButton(
                                 shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(40.0),
-                                      topRight: Radius.circular(40.0),
-                                      bottomLeft: Radius.circular(40.0),
-                                      bottomRight: Radius.circular(40.0),
-                                    )),
+                                  topLeft: Radius.circular(40.0),
+                                  topRight: Radius.circular(40.0),
+                                  bottomLeft: Radius.circular(40.0),
+                                  bottomRight: Radius.circular(40.0),
+                                )),
                                 onPressed: () {
                                   Navigator.push(context,
                                       FadeRoute(page: Question(id: idQ + 1)));
@@ -180,11 +189,11 @@ class _QuestionState extends State<Question> {
                               child: RaisedButton(
                                 shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(40.0),
-                                      topRight: Radius.circular(40.0),
-                                      bottomLeft: Radius.circular(40.0),
-                                      bottomRight: Radius.circular(40.0),
-                                    )),
+                                  topLeft: Radius.circular(40.0),
+                                  topRight: Radius.circular(40.0),
+                                  bottomLeft: Radius.circular(40.0),
+                                  bottomRight: Radius.circular(40.0),
+                                )),
                                 onPressed: () {
                                   Navigator.push(context,
                                       FadeRoute(page: Question(id: idQ + 1)));
@@ -220,7 +229,6 @@ class _QuestionState extends State<Question> {
                 ),
               ])
         ]));
-    return Container();
   }
 }
 
@@ -228,23 +236,23 @@ class FadeRoute extends PageRouteBuilder {
   final Widget page;
   FadeRoute({required this.page})
       : super(
-    pageBuilder: (
-        BuildContext context,
-        Animation<double> animation,
-        Animation<double> secondaryAnimation,
-        ) =>
-    page,
-    transitionsBuilder: (
-        BuildContext context,
-        Animation<double> animation,
-        Animation<double> secondaryAnimation,
-        Widget child,
-        ) =>
-        FadeTransition(
-          opacity: animation,
-          child: child,
-        ),
-  );
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+        );
 }
 
 class Screen2 extends StatelessWidget {
