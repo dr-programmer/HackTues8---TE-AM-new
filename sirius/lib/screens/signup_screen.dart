@@ -132,8 +132,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     UploadTask uploadTask = storageReference
                         .child("image_$fileName")
                         .putFile(_image);
-                    downloadURL = await (await uploadTask)
-                        .ref
+                    while (await uploadTask == 0);
+                    downloadURL = await storageReference
                         .child('image_$fileName')
                         .getDownloadURL();
                     FirebaseFirestore.instance
