@@ -367,23 +367,28 @@ class _Update extends State<Update> {
                   height: 20,
                 ),
                 UpdateButton(context, false, () async {
-                  email = _emailTextController.text;
-                  name = _userNameTextController.text;
-                  country = _countryTextController.text;
-                  city = _cityTextController.text;
+                  String oldEmail = email;
+                  if (_emailTextController.text.isNotEmpty)
+                    email = _emailTextController.text;
+                  if (_userNameTextController.text.isNotEmpty)
+                    name = _userNameTextController.text;
+                  if (_countryTextController.text.isNotEmpty)
+                    country = _countryTextController.text;
+                  if (_cityTextController.text.isNotEmpty)
+                    city = _cityTextController.text;
                   String fileName = path.basename(_image!.path);
                   String downloadURL;
                   var user = FirebaseAuth.instance.currentUser;
-                  user
-                      ?.updateDisplayName(_userNameTextController.toString())
+                  await user
+                      ?.updateEmail(_emailTextController.text)
                       .then((value) {
                     print("Profile has been changed successfully");
                     //DO Other compilation here if you want to like setting the state of the app
                   }).catchError((e) {
                     print("There was an error updating profile");
                   });
-                  user
-                      ?.updatePassword(_passwordTextController.toString())
+                  await user
+                      ?.updatePassword(_passwordTextController.text)
                       .then((value) {
                     print("Profile has been changed successfully");
                     //DO Other compilation here if you want to like setting the state of the app
@@ -400,8 +405,12 @@ class _Update extends State<Update> {
                       .getDownloadURL();
                   FirebaseFirestore.instance
                       .collection('Users')
+                      .doc(oldEmail)
+                      .delete();
+                  FirebaseFirestore.instance
+                      .collection('Users')
                       .doc(email)
-                      .update({
+                      .set({
                     'xp': xp,
                     'name': name,
                     'country': country,
