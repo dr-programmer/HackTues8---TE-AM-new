@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sirius/reusable_widgets/reusable_widget.dart';
+import 'package:sirius/screens/Variables.dart';
 import 'home_screen.dart';
 import 'signup_screen.dart';
 import 'package:sirius/utils/color_utils.dart';
@@ -49,6 +50,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 Text(errorText, style: TextStyle(color: Colors.red)),
                 signInSignUpButton(context, true, () {
+                  email = _emailTextController.text;
                   FirebaseAuth.instance
                       .signInWithEmailAndPassword(
                           email: _emailTextController.text,
